@@ -1,0 +1,31 @@
+// salario neto 1.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+ int fac(int x);
+  void main()
+  {
+	  int dat,z;
+	  int j;
+	  cout<<"Ingrese un numero de veces que quiere repetir: ";
+	   cin>>j;
+	   for(int t=1;t<=j;t++)
+	   {
+	   
+	       cout<<"\nIngrese un numero: \n";
+		   cin>> dat;
+		   z=fac(dat);
+		   cout<<"El factorial del numero es; "<<z;
+	   }
+		   getch();
+  }
+  int fac(int x)
+  {
+	  int m=1;
+	  for(int i=2;i<=x;i++)
+	     m=m*i;
+	  return m;
+  }
