@@ -1,0 +1,53 @@
+// SERIE.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+#define TAM 100
+
+ using namespace std;
+void mostrar_vector(float vec[],int n);
+float fac(int y);
+float suma(int n,float vec[]);
+
+ void main ()
+ {
+   float v[TAM],s;
+   int n;
+   cout<<"Ingrese el enesimo numero: ";
+   cin>>n;
+   s=suma(n,v);
+   mostrar_vector(v,n);
+
+   cout<<"La suma es: "<<s;
+   getch();
+ }
+
+
+float fac (int y)
+{
+	float f=1;
+	for(int i=2;i<=y;i++)
+		f=f*i;
+	return f;
+}
+
+float suma(int n,float vec[])
+{
+	float s=0;
+	for(int i=1;i<=n;i++)
+	{
+		s=s+powf(i,2*i)/fac(i*2);
+		vec[i-1]=powf(i,2*i)/fac (i*2);
+	}
+	return s;
+}
+
+void mostrar_vector(float vec[],int n)
+{
+	for(int i=0;i<n;i++)
+	 cout<<"["<<i<<"]="<<vec[i];
+	cout<<endl;
+}
